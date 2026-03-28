@@ -96,7 +96,6 @@ struct GraphView: View {
             let scale: CGFloat = 50
             
             ZStack {
-                // Оси
                 Path { path in
                     path.move(to: CGPoint(x: 0, y: centerY))
                     path.addLine(to: CGPoint(x: width, y: centerY))
@@ -106,7 +105,7 @@ struct GraphView: View {
                 }
                 .stroke(Color.gray, lineWidth: 1)
                 
-                // Сетка
+              
                 ForEach(-5...5, id: \.self) { i in
                     let x = centerX + CGFloat(i) * scale
                     if x >= 0 && x <= width {
@@ -127,7 +126,7 @@ struct GraphView: View {
                     }
                 }
                 
-                // График
+          
                 Path { path in
                     var firstPoint = true
                     for x in stride(from: -5, through: 5, by: 0.05) {
